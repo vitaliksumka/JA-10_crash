@@ -102,13 +102,15 @@ public class UserDaoImpl implements UserDAO {
             preparedStatement = connection.prepareStatement(READ_ALL);
             ResultSet result = preparedStatement.executeQuery();
             while (result.next()) {
-                Integer userId = result.getInt("id");
-                String email = result.getString("email");
-                String firstName = result.getString("first_name");
-                String lastName = result.getString("last_name");
-                String role = result.getString("role");
-                userRecords.add(new User_domain(userId, email, firstName, lastName, role));
-            }
+
+            }  Integer userId = result.getInt("id");
+            String email = result.getString("email");
+            String firstName = result.getString("first_name");
+            String lastName = result.getString("last_name");
+            String role = result.getString("role");
+            userRecords.add(new User_domain(userId, email, firstName, lastName, role));
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
