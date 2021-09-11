@@ -3,23 +3,36 @@ package service_implementation.impl;
 import dao.ProductDAO;
 import dao.impl.ProductDaoImpl;
 import domain.Product;
+import org.apache.log4j.Logger;
+import service_implementation.ProductService;
 import shared.AbstractCRUD;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class ProductServiceImpl implements AbstractCRUD<Product> {
+public class ProductServiceImpl implements ProductService {
 
     private ProductDAO productDAO;
+
+    private static ProductServiceImpl productService;
+
+    private static Logger logger = Logger.getLogger(ProductServiceImpl.class);
 
     public ProductServiceImpl() {
 
         try {
             productDAO = new ProductDaoImpl();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+            logger.error(e);
         }
 
+    }
+
+    public static ProductService getProductServiceService() {
+        if (productService == null) {
+            productService = new ProductServiceImpl();
+        }
+        return productService;
     }
 
     @Override
@@ -39,11 +52,11 @@ public class ProductServiceImpl implements AbstractCRUD<Product> {
 
     @Override
     public void delete(Integer id) {
-         productDAO.delete(id);
+        productDAO.delete(id);
     }
 
     @Override
     public List<Product> readAll() {
-       return productDAO.readAll();
+        return productDAO.readAll();
     }
 }

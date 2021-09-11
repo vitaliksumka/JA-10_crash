@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface BucketService extends AbstractCRUD<Bucket>{
 
-
 }

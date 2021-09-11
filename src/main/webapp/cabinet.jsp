@@ -11,6 +11,6 @@
     <title>cabinet</title>
 </head>
 <body>
-<h1>Welcome to the cabinet ${userName} ${userEmail}</h1>
+<h1>Welcome to the cabinet ${firstName} ${userEmail}</h1>
 </body>
 </html>

@@ -8,7 +8,8 @@ create table user (
         email varchar(80) not null,
         first_name varchar(80) not null,
         last_name varchar(80)  not null,
-        role varchar(80) not null
+        role varchar(80) not null,
+        password varchar(80) not null
 );
 
 create table product (
@@ -28,6 +29,8 @@ create table bucket (
 );
 
 select * from user;
+select * from product;
+select * from bucket;
 
 
 

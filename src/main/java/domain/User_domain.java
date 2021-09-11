@@ -9,20 +9,23 @@ public class User_domain {
     private String firstName;
     private String lastName;
     private String role;
+    private String password;
 
-    public User_domain(Integer id, String email, String firstName, String lastName, String role) {
+    public User_domain(Integer id, String email, String firstName, String lastName, String role, String password) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
+        this.password = password;
     }
 
-    public User_domain(String email, String firstName, String lastName, String role) {
+    public User_domain(String email, String firstName, String lastName, String role, String password) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
+        this.password = password;
     }
 
     public Integer getId() {
@@ -65,17 +68,25 @@ public class User_domain {
         this.role = role;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User_domain user = (User_domain) o;
-        return Objects.equals(id, user.id) && Objects.equals(email, user.email) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(role, user.role);
+        User_domain that = (User_domain) o;
+        return Objects.equals(id, that.id) && Objects.equals(email, that.email) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(role, that.role) && Objects.equals(password, that.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, firstName, lastName, role);
+        return Objects.hash(id, email, firstName, lastName, role, password);
     }
 
     @Override
@@ -86,6 +97,7 @@ public class User_domain {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", role='" + role + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

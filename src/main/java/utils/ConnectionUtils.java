@@ -1,11 +1,10 @@
 package utils;
 
-
-import java.sql.*;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
+import org.apache.log4j.xml.DOMConfigurator;
 
 public class ConnectionUtils {
 
@@ -13,8 +12,9 @@ public class ConnectionUtils {
     private static String USER_PASSWORD = "55555";
     private static String URL = "jdbc:mysql://localhost:3306/i_shop?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
-    public static Connection  openConnection() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+    public static Connection openConnection() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+        DOMConfigurator.configure("logger/loggerSettings.xml");
         Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-        return DriverManager.getConnection (URL, USER_NAME, USER_PASSWORD);
+        return DriverManager.getConnection(URL, USER_NAME, USER_PASSWORD);
     }
 }
