@@ -1,6 +1,8 @@
 package servlets;
 
+import com.google.gson.Gson;
 import domain.User_domain;
+import dto.UserLogin;
 import service_implementation.UserService;
 import service_implementation.impl.UserServiceImpl;
 
@@ -22,16 +24,23 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String login = request.getParameter("login");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        User_domain user_domain = userService.getUserByEmail(login);
+        User_domain user_domain = userService.getUserByEmail(email);
 
         if (user_domain != null && user_domain.getPassword().equals(password)) {
-            request.setAttribute("userEmail", login);
-            request.getRequestDispatcher("cabinet.jsp").forward(request, response);
-        }
-        request.getRequestDispatcher("login.jsp").forward(request, response);
 
+            UserLogin userLogin = new UserLogin();
+            userLogin.destinationUrl = "cabinet.jsp";
+            userLogin.userEmail = user_domain.getEmail();
+            String json = new Gson().toJson(userLogin);
+
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json);
+        }
     }
 }
+
+

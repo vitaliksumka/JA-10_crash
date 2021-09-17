@@ -17,11 +17,6 @@ public class RegistrationServlet extends HttpServlet {
 
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().append("Served at: ").append(request.getContextPath());
-    }
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String firstName = request.getParameter("firstName");
@@ -29,9 +24,11 @@ public class RegistrationServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if (!email.isEmpty() && !firstName.isEmpty() && !lastName.isEmpty() && !password.isEmpty()) {
-            request.setAttribute("firstName", firstName);
             userService.create(new User_domain(firstName, lastName, email, UserRole.USER.toString(), password));
         }
-        request.getRequestDispatcher("cabinet.jsp").forward(request, response);
+
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write("Success");
     }
 }
