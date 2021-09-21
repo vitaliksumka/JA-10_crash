@@ -31,6 +31,7 @@
     <section class="signup">
         <div class="container">
             <div class="signup-content">
+
                 <div class="signup-form">
                     <h2 class="form-title">Registration</h2>
 
@@ -84,6 +85,7 @@
             </div>
         </div>
     </section>
+
 </div>
 
 <script src="vendor/jquery/jquery.min.js"></script>

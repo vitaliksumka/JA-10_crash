@@ -41,6 +41,7 @@
                     <h2 class="form-title">Sign up</h2>
 
                     <form action="${pageContext.request.contextPath}/LoginServlet" method="POST" class="login-form">
+
                         <div class="alert alert-warning" role="alert">
                             You are registered?
                         </div>
@@ -70,6 +71,7 @@
             </div>
         </div>
     </section>
+
 </div>
 
 <script src="vendor/jquery/jquery.min.js"></script>
