@@ -16,6 +16,13 @@ public class Bucket {
         this.purchaseDate = purchaseDate;
     }
 
+    public Bucket(Integer userId, Integer productId, Date purchaseDate) {
+        super();
+        this.userId = userId;
+        this.productId = productId;
+        this.purchaseDate = purchaseDate;
+    }
+
     public Integer getId() {
         return id;
     }

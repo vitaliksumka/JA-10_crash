@@ -8,6 +8,7 @@
         <welcome-file>index.jsp</welcome-file>
         <welcome-file>login.jsp</welcome-file>
         <welcome-file>cabinet.jsp</welcome-file>
+
     </welcome-file-list>
 
     <servlet>
@@ -44,6 +45,15 @@
     <servlet-mapping>
         <servlet-name>LogOutServlet</servlet-name>
         <url-pattern>/logOutServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BucketController</servlet-name>
+        <servlet-class>servlets.BucketController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BucketController</servlet-name>
+        <url-pattern>/bucketController</url-pattern>
     </servlet-mapping>
 
 

@@ -39,7 +39,7 @@
         <div class="navbar-menu-wrapper d-flex align-items-top">
             <ul class="navbar-nav">
                 <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                    <h1 class="welcome-text"> <span class="text-black fw-bold">Cabinet</span></h1>
+                    <h1 class="welcome-text"><span class="text-black fw-bold">Cabinet</span></h1>
                     <h3 class="welcome-sub-text">Your performance summary this week </h3>
                 </li>
             </ul>
@@ -66,7 +66,8 @@
                         <a class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
 
-                            <a class="dropdown-item logOut"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
+                            <a class="dropdown-item logOut"><i
+                                    class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
                                 Out</a>
                     </div>
 
@@ -369,6 +370,19 @@
         </nav>
         <div class="main-panel">
             <div class="content-wrapper">
+
+
+
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <div  id="productCardsFromCabinet">
+
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -394,6 +408,7 @@
 <script src="../template_admin_panel/template/gulpfile.js"></script>
 
 <script src="js/product.js"></script>
+<script src="js/cabinet.js"></script>
 </body>
 </html>
 

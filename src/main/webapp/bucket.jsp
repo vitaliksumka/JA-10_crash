@@ -369,6 +369,32 @@
         </nav>
         <div class="main-panel">
             <div class="content-wrapper">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -394,6 +420,7 @@
 <script src="../template_admin_panel/template/gulpfile.js"></script>
 
 <script src="js/product.js"></script>
+<script src="js/cabinet.js"></script>
 </body>
 </html>
 

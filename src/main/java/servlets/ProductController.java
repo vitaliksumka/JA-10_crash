@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "Periodical", value = "/Periodical")
+@WebServlet("/product")
 public class ProductController extends HttpServlet {
 
     ProductService productService = ProductServiceImpl.getProductServiceService();
@@ -45,7 +45,13 @@ public class ProductController extends HttpServlet {
     // to get resources (product)
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().append("Servetd: at").append(request.getContextPath());
+       String productId = request.getParameter("id");
+       Product product = productService.read(Integer.parseInt(productId));
+
+
+       request.setAttribute("product", product);
+       request.getRequestDispatcher("/singleProduct.jsp").forward(request, response);
+
     }
 
     // to update resources (product)

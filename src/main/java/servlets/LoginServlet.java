@@ -29,7 +29,12 @@ public class LoginServlet extends HttpServlet {
 
         User_domain user_domain = userService.getUserByEmail(email);
 
+
         if (user_domain != null && user_domain.getPassword().equals(password)) {
+            HttpSession session = request.getSession(true);
+            session.setAttribute("userId", user_domain.getId());
+
+
 
             UserLogin userLogin = new UserLogin();
             userLogin.destinationUrl = "cabinet.jsp";
