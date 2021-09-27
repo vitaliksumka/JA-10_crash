@@ -11,8 +11,12 @@
     <link rel="stylesheet" href="../template_admin_panel/template/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="../template_admin_panel/template/vendors/simple-line-icons/css/simple-line-icons.css">
     <link rel="stylesheet" href="../template_admin_panel/template/vendors/css/vendor.bundle.base.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+
     <link rel="stylesheet" href="../template_admin_panel/template/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="../template_admin_panel/template/js/select.dataTables.min.css">
     <link rel="stylesheet" href="../template_admin_panel/template/css/vertical-layout-light/style.css">
@@ -472,7 +476,10 @@
 
 
 
- <script src="js/product.js"></script>
+<script src="js/product.js"></script>
+<script src="js/cabinet.js"></script>
+<script src="js/serverCalls.js"></script>
+<script src="js/bucket.js"></script>
 
 </body>
 </html>

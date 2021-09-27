@@ -409,6 +409,8 @@
 
 <script src="js/product.js"></script>
 <script src="js/cabinet.js"></script>
+<script src="js/serverCalls.js"></script>
+<script src="js/bucket.js"></script>
 </body>
 </html>
 
